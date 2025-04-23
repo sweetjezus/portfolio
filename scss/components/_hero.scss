@@ -1,0 +1,103 @@
+// _hero.scss
+@use "../abstracts" as *;
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5rem;
+
+  &__pic {
+    justify-content: right;
+    align-items: end;
+
+    width: 40%;
+    border-radius: 100%;
+    animation: fade-in 2s forwards 2s ease-in;
+    opacity: 0;
+
+    &.heropic {
+      width: 100%;
+
+      box-shadow: 0 0 1rem rgba($color-accent, 0.5);
+    }
+  }
+
+  &__content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 50%;
+
+    &__p {
+      text-transform: uppercase;
+      font-size: $default-font-size;
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      width: 0;
+      animation: typewriter 1.5s steps(30) 2s forwards;
+    }
+
+    &__p2 {
+      text-transform: uppercase;
+      font-size: $default-font-size;
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      width: 0;
+      border-right: none;
+      animation: typewriter3 1.5s steps(30) 5.4s forwards;
+    }
+
+    &__h1 {
+      text-transform: uppercase;
+      font-size: $font-size-xxlarge;
+      overflow: hidden;
+      white-space: nowrap;
+      display: inline-block;
+      max-width: 0;
+      animation: typewriter-h1 1.5s steps(20) 3.8s forwards;
+
+      &-span {
+        opacity: 0;
+        animation: blink 1s ease-in-out infinite;
+      }
+    }
+
+    &_btns {
+      margin-top: 1rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      opacity: 0;
+      animation: fade-in 2s forwards 7s;
+    }
+  }
+}
+
+@include respond("tablet") {
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0;
+
+    &__pic {
+      width: 80%;
+    }
+
+    &__content {
+      width: 90%;
+      &__p,
+      &__p2 {
+        font-size: $font-size-small;
+      }
+
+      &__h1 {
+        font-size: $font-size-xlarge;
+      }
+    }
+  }
+}

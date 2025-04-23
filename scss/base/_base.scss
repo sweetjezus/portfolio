@@ -1,0 +1,20 @@
+@use "../abstracts/" as *;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  //define o que é 1rem
+  font-size: 75%;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: #1d202c;
+  overflow: hidden;
+}

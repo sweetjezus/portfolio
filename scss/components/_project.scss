@@ -1,0 +1,48 @@
+@use "../abstracts/" as *;
+
+.project-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 1rem;
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  color: white;
+  text-align: center;
+
+  &:hover {
+    transform: scale(1.05);
+    animation: transform 8s ease-in 1s;
+  }
+  img {
+    width: 90%;
+    border-radius: 3px;
+  }
+
+  h3 {
+    font-size: $font-size-base;
+    margin: 1rem 0 0.5rem;
+  }
+
+  p {
+    text-align: left;
+    font-size: $font-size-small;
+    &.stack-text {
+      font-weight: 600;
+    }
+    span {
+      font-weight: $font-weight-bold;
+      text-shadow: 0.5px 0.5px 1px;
+    }
+  }
+
+  .project-links {
+    margin-top: 1rem;
+  }
+}
+
+@include respond("tablet") {
+  .project-card {
+    img {
+      width: 90%;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website",
+  "license": "ISC",
+  "author": "Francisco Oliveira",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "sass --watch scss/main.scss css/style.css"
+  },
+  "devDependencies": {
+    "sass": "^1.86.3"
+  }
+}

@@ -1,0 +1,133 @@
+@use "../abstracts/" as *;
+
+@include respond("tablet") {
+  .navbar {
+    display: flex !important;
+    justify-content: center !important;
+
+    &__logo {
+      display: none;
+    }
+  }
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-top-right-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
+  color: #fff;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  &__btn {
+    right: 0px;
+  }
+
+  &__logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    opacity: 0.4;
+  }
+
+  .nav__item.active a {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  &__menu {
+    justify-self: center;
+
+    ul {
+      display: grid;
+      grid-auto-flow: column;
+      gap: 2rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .nav__cv {
+        a {
+          display: grid;
+          place-items: center;
+          padding: 0.75rem 1rem;
+          border-radius: 0.5rem;
+          transition: background 0.3s ease;
+          text-decoration: none;
+          color: inherit;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+
+          span {
+            position: absolute;
+            top: calc(100% + 8px);
+            opacity: 0;
+            white-space: nowrap;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            color: white;
+            font-size: 1rem;
+            pointer-events: none;
+            transform: translateY(5px);
+          }
+
+          &:hover span {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+      .nav__item {
+        position: relative;
+        display: grid;
+        place-items: center;
+
+        a {
+          display: grid;
+          place-items: center;
+          padding: 0.75rem 1rem;
+          border-radius: 0.5rem;
+          transition: background 0.3s ease;
+          text-decoration: none;
+          color: inherit;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+
+          span {
+            position: absolute;
+            top: calc(100% + 8px);
+            opacity: 0;
+            white-space: nowrap;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            color: white;
+            font-size: 1rem;
+            pointer-events: none;
+            transform: translateY(5px);
+          }
+
+          &:hover span {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
